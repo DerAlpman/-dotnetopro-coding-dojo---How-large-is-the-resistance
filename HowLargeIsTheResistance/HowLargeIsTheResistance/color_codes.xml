@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ColorCodes xmlns="HowLargeIsTheResistance" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Schemas\color_codes.xsd">
-  <ColorCode color="keine" decimal="not_allowed" unit_position ="not_allowed" multiplier="not_allowed" tolerance="20" />
-  <ColorCode color="silver" decimal="not_allowed" unit_position ="not_allowed" multiplier="-2" tolerance="10" />
-  <ColorCode color="gold" decimal="not_allowed" unit_position ="not_allowed" multiplier="-1" tolerance="5" />
-  <ColorCode color="schwarz" decimal="not_allowed" unit_position ="0" multiplier="-0" tolerance="not_allowed" />
-  <ColorCode color="braun" decimal="1" unit_position ="1" multiplier="1" tolerance="1" />
-  <ColorCode color="rot" decimal="2" unit_position ="2" multiplier="2" tolerance="2" />
-  <ColorCode color="orange" decimal="3" unit_position ="3" multiplier="3" tolerance="not_allowed" />
-  <ColorCode color="gelb" decimal="4" unit_position ="4" multiplier="4" tolerance="not_allowed" />
-  <ColorCode color="grün" decimal="5" unit_position ="5" multiplier="5" tolerance="0,5" />
-  <ColorCode color="blau" decimal="6" unit_position ="6" multiplier="6" tolerance="0,25" />
-  <ColorCode color="violett" decimal="7" unit_position ="7" multiplier="7" tolerance="0,1" />
-  <ColorCode color="grau" decimal="8" unit_position ="8" multiplier="8" tolerance="0,05" />
-  <ColorCode color="weiß" deciml="9" unit_position ="9" multiplier="9" tolerance="not_allowed" />
-</ColorCodes>
+<ColorCodes_DIN_IEC_62 xmlns="http://www.dotnetpro.de/HowLargeIsTheResistance" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dotnetpro.de/HowLargeIsTheResistance Schemas\color_codes.xsd">
+  <ColorCode_DIN_IEC_62 color="keine" decimal="not_allowed" unit_position ="not_allowed" multiplier="not_allowed" tolerance="20" />
+  <ColorCode_DIN_IEC_62 color="silver" decimal="not_allowed" unit_position ="not_allowed" multiplier="-2" tolerance="10" />
+  <ColorCode_DIN_IEC_62 color="gold" decimal="not_allowed" unit_position ="not_allowed" multiplier="-1" tolerance="5" />
+  <ColorCode_DIN_IEC_62 color="schwarz" decimal="not_allowed" unit_position ="0" multiplier="-0" tolerance="not_allowed" />
+  <ColorCode_DIN_IEC_62 color="braun" decimal="1" unit_position ="1" multiplier="1" tolerance="1" />
+  <ColorCode_DIN_IEC_62 color="rot" decimal="2" unit_position ="2" multiplier="2" tolerance="2" />
+  <ColorCode_DIN_IEC_62 color="orange" decimal="3" unit_position ="3" multiplier="3" tolerance="not_allowed" />
+  <ColorCode_DIN_IEC_62 color="gelb" decimal="4" unit_position ="4" multiplier="4" tolerance="not_allowed" />
+  <ColorCode_DIN_IEC_62 color="grün" decimal="5" unit_position ="5" multiplier="5" tolerance="0,5" />
+  <ColorCode_DIN_IEC_62 color="blau" decimal="6" unit_position ="6" multiplier="6" tolerance="0,25" />
+  <ColorCode_DIN_IEC_62 color="violett" decimal="7" unit_position ="7" multiplier="7" tolerance="0,1" />
+  <ColorCode_DIN_IEC_62 color="grau" decimal="8" unit_position ="8" multiplier="8" tolerance="0,05" />
+  <ColorCode_DIN_IEC_62 color="weiß" decimal="9" unit_position ="9" multiplier="9" tolerance="not_allowed" />
+</ColorCodes_DIN_IEC_62>

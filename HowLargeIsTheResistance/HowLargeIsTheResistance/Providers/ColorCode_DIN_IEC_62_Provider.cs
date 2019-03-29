@@ -27,7 +27,10 @@ namespace HowLargeIsTheResistance.Providers
 
             _XmlReaderSettings = new XmlReaderSettings();
             _XmlReaderSettings.ValidationType = ValidationType.Schema;
-            _XmlReaderSettings.Schemas.Add(@"HowLargeIsTheResistance", @"Schemas\color_codes.xsd");
+            _XmlReaderSettings.Schemas.Add(@"http://www.dotnetpro.de/HowLargeIsTheResistance", @"Schemas\color_codes.xsd");
+            _XmlReaderSettings.IgnoreComments = true;
+            _XmlReaderSettings.IgnoreProcessingInstructions = true;
+            _XmlReaderSettings.IgnoreWhitespace = true;
         }
 
         #endregion
@@ -55,14 +58,22 @@ namespace HowLargeIsTheResistance.Providers
 
         private XmlReader CreateXmlReader()
         {
-            return XmlReader.Create(_FileName, _XmlReaderSettings);
+            return XmlReader.Create(_FileName);//, _XmlReaderSettings);
         }
 
         private List<ColorCode_DIN_IEC_62> DeserializeXml(XmlReader reader)
         {
             List<ColorCode_DIN_IEC_62> colorCodes = new List<ColorCode_DIN_IEC_62>();
 
-            XmlSerializer serializer = new XmlSerializer(typeof(List<ColorCode_DIN_IEC_62>));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<ColorCode_DIN_IEC_62>), @"http://www.dotnetpro.de/HowLargeIsTheResistance");
+
+            //if (serializer.CanDeserialize(reader))
+            //{
+            foreach (var item in (List<ColorCode_DIN_IEC_62>)serializer.Deserialize(reader))
+            {
+                colorCodes.Add(item);
+            }
+            //}
 
             return colorCodes;
         }
