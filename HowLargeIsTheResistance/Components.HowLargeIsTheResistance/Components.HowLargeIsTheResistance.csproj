@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IColorCode_DIN_IEC_62.cs" />
+    <Compile Include="Interfaces\IColorCode_DIN_IEC_62_Provider.cs" />
+    <Compile Include="Models\ColorCode_DIN_IEC_62.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -50,9 +50,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ColorCode_DIN_IEC_62_ProviderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Components.HowLargeIsTheResistance\Components.HowLargeIsTheResistance.csproj">
+      <Project>{37170EE9-ABCE-4B63-B0F0-4D9112923846}</Project>
+      <Name>Components.HowLargeIsTheResistance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HowLargeIsTheResistance\HowLargeIsTheResistance.csproj">
+      <Project>{9F015276-71DF-4C19-90C5-7EB944BC1CAB}</Project>
+      <Name>HowLargeIsTheResistance</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
