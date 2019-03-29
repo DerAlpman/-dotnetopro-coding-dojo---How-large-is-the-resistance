@@ -3,7 +3,10 @@ using Components.HowLargeIsTheResistance.Models;
 
 namespace HowLargeIsTheResistance.Models
 {
-    internal class ColorCode : IColorCode
+    /// <summary>
+    /// <para> A color code according to DIN IEC 62</para>
+    /// </summary>
+    internal class ColorCode_DIN_IEC_62 : IColorCode_DIN_IEC_62
     {
         #region PROPERTIES
 
