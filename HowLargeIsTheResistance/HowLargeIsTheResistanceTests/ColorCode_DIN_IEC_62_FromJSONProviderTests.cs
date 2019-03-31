@@ -5,14 +5,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace HowLargeIsTheResistanceTests
 {
     [TestClass]
-    public class ColorCode_DIN_IEC_62_ProviderTests
+    public class ColorCode_DIN_IEC_62_FromJSONProviderTests
     {
         [TestMethod]
         public void LoadColorCodes_ProviderGetsNotExistingFileName_EmptyListOfColorCodes()
         {
             #region ARRANGE
 
-            ColorCode_DIN_IEC_62_Provider provider = new ColorCode_DIN_IEC_62_Provider("Schnulli.xml");
+            ColorCode_DIN_IEC_62_FromXMLProvider provider = new ColorCode_DIN_IEC_62_FromXMLProvider("Schnulli.xml");
 
             #endregion
 
@@ -34,7 +34,7 @@ namespace HowLargeIsTheResistanceTests
         {
             #region ARRANGE
 
-            ColorCode_DIN_IEC_62_Provider provider = new ColorCode_DIN_IEC_62_Provider("color_codes.xml");
+            ColorCode_DIN_IEC_62_FromXMLProvider provider = new ColorCode_DIN_IEC_62_FromXMLProvider("color_codes.xml");
 
             #endregion
 

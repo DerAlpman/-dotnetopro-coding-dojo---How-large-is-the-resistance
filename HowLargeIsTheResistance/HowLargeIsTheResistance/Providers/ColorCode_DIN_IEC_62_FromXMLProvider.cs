@@ -8,9 +8,9 @@ using Components.HowLargeIsTheResistance.Models;
 namespace HowLargeIsTheResistance.Providers
 {
     /// <summary>
-    /// <para>A class to provide color codes according to DIN IEC 62.</para>
+    /// <para>A class to provide color codes according to DIN IEC 62 from an XML file.</para>
     /// </summary>
-    internal class ColorCode_DIN_IEC_62_Provider : IColorCode_DIN_IEC_62_Provider
+    internal class ColorCode_DIN_IEC_62_FromXMLProvider : IColorCode_DIN_IEC_62_Provider
     {
         #region FIELDS
 
@@ -21,7 +21,7 @@ namespace HowLargeIsTheResistance.Providers
 
         #region CONSTRUCTOR
 
-        public ColorCode_DIN_IEC_62_Provider(string fileName)
+        public ColorCode_DIN_IEC_62_FromXMLProvider(string fileName)
         {
             this._FileName = fileName;
 
@@ -38,7 +38,7 @@ namespace HowLargeIsTheResistance.Providers
         #region ColorCode_DIN_IEC_62_Provider
 
         /// <summary>
-        /// <see cref="ColorCode_DIN_IEC_62_Provider"/>
+        /// <see cref="ColorCode_DIN_IEC_62_FromXMLProvider"/>
         /// </summary>
         /// <returns></returns>
         public IEnumerable<ColorCode_DIN_IEC_62> LoadColourCodes()
