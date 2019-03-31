@@ -35,7 +35,7 @@ namespace HowLargeIsTheResistanceTests
         {
             #region ARRANGE
 
-            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider("color_codes.json");
+            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider(@"TestFiles\color_codes.json");
 
             #endregion
 
@@ -57,7 +57,7 @@ namespace HowLargeIsTheResistanceTests
         {
             #region ARRANGE
 
-            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider("color_codes_invalid.json");
+            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider(@"TestFiles\color_codes_invalid.json");
 
             #endregion
 
