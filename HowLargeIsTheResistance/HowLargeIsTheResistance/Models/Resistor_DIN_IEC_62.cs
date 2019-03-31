@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using Components.HowLargeIsTheResistance.Interfaces;
 
-namespace Components.HowLargeIsTheResistance.Models
+namespace HowLargeIsTheResistance.Models
 {
     /// <summary>
     /// <para>An electronic resistor according to DIN IEC 62.</para>
     /// </summary>
-    public class Resistor_DIN_IEC_62
+    public class Resistor_DIN_IEC_62 : IElectronicResistor
     {
         #region CONSTS
 
@@ -47,9 +48,23 @@ namespace Components.HowLargeIsTheResistance.Models
 
         #endregion
 
+        #region IElectronicResistor
+
+        /// <summary>
+        /// <see cref="IElectronicResistor.ResistorValue()"/>
+        /// </summary>
+        /// <returns>Resistor value in Ohm plus tolerance in %, e. g. 1300 Ohm ± 0.5 %.</returns>
+        public string ResistorValue()
+        {
+            double resistorValue = _BaseResistorValue * Math.Pow(10, _Multiplier);
+            return String.Format(CultureInfo.InvariantCulture, "{0} Ohm ± {1} %", resistorValue, _Tolerance);
+        }
+
+        #endregion
+
         #region Resistor_DIN_IEC_62
 
-        public static Resistor_DIN_IEC_62 Create(int baseResistorValue, int multiplier, double tolerance)
+        internal static Resistor_DIN_IEC_62 Create(int baseResistorValue, int multiplier, double tolerance)
         {
             if (baseResistorValue < 10 || baseResistorValue > 99)
             {
@@ -67,12 +82,6 @@ namespace Components.HowLargeIsTheResistance.Models
             }
 
             return new Resistor_DIN_IEC_62(baseResistorValue, multiplier, tolerance);
-        }
-
-        public string ResistorValue()
-        {
-            double resistorValue = _BaseResistorValue * Math.Pow(10, _Multiplier);
-            return String.Format(CultureInfo.InvariantCulture, "{0} Ohm ± {1} %", resistorValue, _Tolerance);
         }
 
         #endregion

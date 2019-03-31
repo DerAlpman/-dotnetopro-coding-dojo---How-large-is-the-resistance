@@ -1,4 +1,4 @@
-﻿using Components.HowLargeIsTheResistance.Models;
+﻿using HowLargeIsTheResistance.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace HowLargeIsTheResistanceTests

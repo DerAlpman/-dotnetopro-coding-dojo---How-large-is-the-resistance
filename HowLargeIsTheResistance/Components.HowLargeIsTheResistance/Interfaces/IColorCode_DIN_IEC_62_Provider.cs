@@ -9,7 +9,7 @@ namespace Components.HowLargeIsTheResistance.Interfaces
     public interface IColorCode_DIN_IEC_62_Provider
     {
         /// <summary>
-        /// <para>Load color codes</para>
+        /// <para>Load color codes.</para>
         /// </summary>
         /// <returns>Collection of color codes</returns>
         IEnumerable<ColorCode_DIN_IEC_62> LoadColourCodes();
