@@ -52,7 +52,7 @@ namespace HowLargeIsTheResistance.Providers
 
             if (!File.Exists(_FileName))
             {
-                throw new FileNotFoundException(_FileName);
+                throw new FileNotFoundException("JSON file {0} not found", _FileName);
             }
 
             if (TryGetJSONSchema(out JSchema schema))
