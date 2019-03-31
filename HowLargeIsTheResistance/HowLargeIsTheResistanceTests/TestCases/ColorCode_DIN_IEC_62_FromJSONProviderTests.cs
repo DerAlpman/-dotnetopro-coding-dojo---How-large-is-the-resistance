@@ -25,7 +25,7 @@ namespace HowLargeIsTheResistanceTests
 
             #region ASSERT
 
-            Assert.ThrowsException<FileNotFoundException>(() => provider.LoadColourCodes());
+            Assert.ThrowsException<FileNotFoundException>(() => provider.LoadColorCodes());
 
             #endregion
         }
@@ -41,7 +41,7 @@ namespace HowLargeIsTheResistanceTests
 
             #region ACT
 
-            IEnumerable<ColorCode_DIN_IEC_62> colorCodes = provider.LoadColourCodes();
+            IEnumerable<ColorCode_DIN_IEC_62> colorCodes = provider.LoadColorCodes();
 
             #endregion
 
@@ -63,7 +63,7 @@ namespace HowLargeIsTheResistanceTests
 
             #region ACT
 
-            IEnumerable<ColorCode_DIN_IEC_62> colorCodes = provider.LoadColourCodes();
+            var colorCodes = provider.LoadColorCodes();
 
             #endregion
 

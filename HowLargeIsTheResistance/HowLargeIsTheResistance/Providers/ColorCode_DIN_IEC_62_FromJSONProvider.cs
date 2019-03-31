@@ -43,11 +43,13 @@ namespace HowLargeIsTheResistance.Providers
         #region IColorCode_DIN_IEC_62_Provider
 
         /// <summary>
-        /// <see cref="IColorCode_DIN_IEC_62_Provider.LoadColourCodes()"/>
+        /// <see cref="IColorCode_DIN_IEC_62_Provider.LoadColorCodes()"/>
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ColorCode_DIN_IEC_62> LoadColourCodes()
+        public IReadOnlyList<ColorCode_DIN_IEC_62> LoadColorCodes()
         {
+            IList<ColorCode_DIN_IEC_62> colorCodes = new List<ColorCode_DIN_IEC_62>();
+
             if (!File.Exists(_FileName))
             {
                 throw new FileNotFoundException(_FileName);
@@ -57,11 +59,11 @@ namespace HowLargeIsTheResistance.Providers
             {
                 foreach (var item in DeserializeJSONWithSchema(schema))
                 {
-                    yield return item;
+                    colorCodes.Add(item);
                 }
             }
 
-            yield break;
+            return ((IReadOnlyList<ColorCode_DIN_IEC_62>)colorCodes);
         }
 
         #endregion
