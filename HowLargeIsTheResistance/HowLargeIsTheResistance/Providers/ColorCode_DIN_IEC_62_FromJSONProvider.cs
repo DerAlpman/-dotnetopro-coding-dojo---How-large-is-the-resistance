@@ -48,6 +48,19 @@ namespace HowLargeIsTheResistance.Providers
 
             if (TryGetJSONSchema(out JSchema schema))
             {
+                // read JSON directly from a file
+                using (StreamReader file = File.OpenText(@"color_codes.json"))
+                using (JsonTextReader reader = new JsonTextReader(file))
+                using (JSchemaValidatingReader validatingReader = new JSchemaValidatingReader(reader))
+                {
+                    validatingReader.Schema = schema;
+
+                    IList<string> messages = new List<string>();
+                    validatingReader.ValidationEventHandler += (o, a) => messages.Add(a.Message);
+
+                    JsonSerializer serializer = new JsonSerializer();
+                    IList<ColorCodes_DIN_IEC_62> colorCodes = serializer.Deserialize<List<ColorCodes_DIN_IEC_62>>(validatingReader);
+                }
             }
 
             yield break;
