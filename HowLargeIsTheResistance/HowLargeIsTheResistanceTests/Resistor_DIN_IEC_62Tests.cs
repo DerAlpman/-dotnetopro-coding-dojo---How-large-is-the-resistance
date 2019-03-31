@@ -28,6 +28,7 @@ namespace HowLargeIsTheResistanceTests
 
         [TestMethod]
         [DataRow(13, 2, 0.1, "1300 Ohm ± 0.1 %")]
+        [DataRow(43, 5, 20, "4300000 Ohm ± 20 %")]
         public void ResistorValue_ResistorValues_CorrectlyCalculatdResistorValueWithUnits(
             int baseResistorValue, int multiplier, double tolerance, string expectedValue)
         {
@@ -37,7 +38,7 @@ namespace HowLargeIsTheResistanceTests
 
             #region ACT
 
-            var resistor = Resistor_DIN_IEC_62.Create(13, 2, 0.1);
+            var resistor = Resistor_DIN_IEC_62.Create(baseResistorValue, multiplier, tolerance);
             string resistorValue = resistor.ResistorValue();
 
             #endregion
