@@ -34,7 +34,7 @@ namespace HowLargeIsTheResistanceTests
         {
             #region ARRANGE
 
-            ColorCode_DIN_IEC_62_FromXMLProvider provider = new ColorCode_DIN_IEC_62_FromXMLProvider("color_codes.xml");
+            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider("color_codes.json");
 
             #endregion
 

@@ -2,6 +2,8 @@
 using System.IO;
 using Components.HowLargeIsTheResistance.Interfaces;
 using Components.HowLargeIsTheResistance.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Schema;
 
 namespace HowLargeIsTheResistance.Providers
 {
@@ -10,6 +12,12 @@ namespace HowLargeIsTheResistance.Providers
     /// </summary>
     internal class ColorCode_DIN_IEC_62_FromJSONProvider : IColorCode_DIN_IEC_62_Provider
     {
+        #region CONSTS
+
+        private const string SCHEMA_FILE_NAME = @"Schemas/color_codes_schema.json";
+
+        #endregion
+
         #region FIELDS
 
         private readonly string _FileName;
@@ -38,7 +46,22 @@ namespace HowLargeIsTheResistance.Providers
                 yield break;
             }
 
+            if (TryGetJSONSchema(out JSchema schema))
+            {
+            }
+
             yield break;
+        }
+
+        private static bool TryGetJSONSchema(out JSchema schema)
+        {
+            using (StreamReader file = File.OpenText(SCHEMA_FILE_NAME))
+            using (JsonTextReader reader = new JsonTextReader(file))
+            {
+                schema = JSchema.Load(reader);
+            }
+
+            return schema != null;
         }
 
         #endregion
