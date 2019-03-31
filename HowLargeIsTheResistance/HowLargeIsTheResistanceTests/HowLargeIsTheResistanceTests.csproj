@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="ColorCode_DIN_IEC_62_FromJSONProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ColorCode_DIN_IEC_62_FromXMLProviderTests.cs" />
     <Compile Include="Resistor_DIN_IEC_62Tests.cs" />
   </ItemGroup>
   <ItemGroup>
