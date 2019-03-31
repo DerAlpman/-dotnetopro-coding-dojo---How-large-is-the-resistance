@@ -21,8 +21,6 @@ namespace HowLargeIsTheResistanceTests
 
             #region ACT
 
-            var colorCodes = provider.LoadColourCodes();
-
             #endregion
 
             #region ASSERT
