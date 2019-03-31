@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Components.HowLargeIsTheResistance.Models;
 using HowLargeIsTheResistance.Providers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -40,7 +42,7 @@ namespace HowLargeIsTheResistanceTests
 
             #region ACT
 
-            var colorCodes = provider.LoadColourCodes();
+            IEnumerable<ColorCode_DIN_IEC_62> colorCodes = provider.LoadColourCodes();
 
             #endregion
 
