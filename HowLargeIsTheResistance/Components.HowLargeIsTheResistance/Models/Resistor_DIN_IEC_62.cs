@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Components.HowLargeIsTheResistance.Models
@@ -42,34 +43,38 @@ namespace Components.HowLargeIsTheResistance.Models
 
         #endregion
 
+
+        #region CONSTRUCTOR
+
+        private Resistor_DIN_IEC_62(int baseResistorValue, int multiplier, double tolerance)
+        {
+            this._BaseResistorValue = baseResistorValue;
+            this._Multiplier = multiplier;
+            this._Tolerance = tolerance;
+        }
+
+        #endregion
+
         #region Resistor_DIN_IEC_62
 
-        public static bool TryCreate(int baseResistorValue, int multiplier, double tolerance,
-            out Resistor_DIN_IEC_62 resistor, out IList<string> errorMessages)
+        public static Resistor_DIN_IEC_62 Create(int baseResistorValue, int multiplier, double tolerance)
         {
-            errorMessages = new List<string>();
-            resistor = new Resistor_DIN_IEC_62();
-
             if (baseResistorValue < 10 || baseResistorValue > 99)
             {
-                errorMessages.Add(string.Format("The base resistor value {0} must be between 10 and 99.", baseResistorValue));
+                throw new ArgumentOutOfRangeException(string.Format("The base resistor value {0} must be between 10 and 99.", baseResistorValue));
             }
 
             if (multiplier < 1 || multiplier > 9)
             {
-                errorMessages.Add(string.Format("The multiplier value {0} must be between 1 and 9.", multiplier));
+                throw new ArgumentOutOfRangeException(string.Format("The multiplier value {0} must be between 1 and 9.", multiplier));
             }
 
             if (!ALLOWED_TOLERANCES.Contains(tolerance))
             {
-                errorMessages.Add(string.Format("The tolerance value {0} is not allowed.", tolerance));
+                throw new ArgumentOutOfRangeException(string.Format("The tolerance value {0} is not allowed.", tolerance));
             }
 
-            resistor._BaseResistorValue = baseResistorValue;
-            resistor._Multiplier = multiplier;
-            resistor._Tolerance = tolerance;
-
-            return !errorMessages.Any();
+            return new Resistor_DIN_IEC_62(baseResistorValue, multiplier, tolerance);
         }
 
         public string ResistorValue()

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Components.HowLargeIsTheResistance.Models;
+﻿using Components.HowLargeIsTheResistance.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace HowLargeIsTheResistanceTests
@@ -16,14 +15,13 @@ namespace HowLargeIsTheResistanceTests
 
             #region ACT
 
-            bool newCompleteResistor = Resistor_DIN_IEC_62.TryCreate(13, 2, -0.1,
-                out Resistor_DIN_IEC_62 resistor, out IList<string> errorMessages);
+            var newCompleteResistor = Resistor_DIN_IEC_62.Create(13, 2, -0.1);
 
             #endregion
 
             #region ASSERT
 
-            Assert.IsTrue(newCompleteResistor);
+            Assert.IsTrue(newCompleteResistor != null);
 
             #endregion
         }
