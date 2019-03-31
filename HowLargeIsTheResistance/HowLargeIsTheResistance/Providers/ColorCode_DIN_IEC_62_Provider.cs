@@ -48,7 +48,7 @@ namespace HowLargeIsTheResistance.Providers
                 yield break;
             }
 
-            XmlReader reader = CreateXmlReader();
+            XmlReader reader = XmlReader.Create(_FileName);//, _XmlReaderSettings);
 
             foreach (var colorCode in DeserializeXml(reader))
             {
@@ -56,16 +56,11 @@ namespace HowLargeIsTheResistance.Providers
             }
         }
 
-        private XmlReader CreateXmlReader()
-        {
-            return XmlReader.Create(_FileName);//, _XmlReaderSettings);
-        }
-
         private List<ColorCode_DIN_IEC_62> DeserializeXml(XmlReader reader)
         {
             List<ColorCode_DIN_IEC_62> colorCodes = new List<ColorCode_DIN_IEC_62>();
 
-            XmlSerializer serializer = new XmlSerializer(typeof(List<ColorCode_DIN_IEC_62>), @"http://www.dotnetpro.de/HowLargeIsTheResistance");
+            XmlSerializer serializer = new XmlSerializer(typeof(List<ColorCode_DIN_IEC_62>));//, @"http://www.dotnetpro.de/HowLargeIsTheResistance");
 
             //if (serializer.CanDeserialize(reader))
             //{

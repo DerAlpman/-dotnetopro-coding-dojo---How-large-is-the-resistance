@@ -1,0 +1,93 @@
+﻿[
+  {
+    "color": "keine",
+    "decimal": "not_allowed",
+    "unit_position": "not_allowed",
+    "multiplier": "not_allowed",
+    "tolerance": "20"
+  },
+  {
+    "color": "silver",
+    "decimal": "not_allowed",
+    "unit_position": "not_allowed",
+    "multiplier": "-2",
+    "tolerance": "10"
+  },
+  {
+    "color": "gold",
+    "decimal": "not_allowed",
+    "unit_position": "not_allowed",
+    "multiplier": "-1",
+    "tolerance": "5"
+  },
+  {
+    "color": "schwarz",
+    "decimal": "not_allowed",
+    "unit_position": "0",
+    "multiplier": "-0",
+    "tolerance": "not_allowed"
+  },
+  {
+    "color": "braun",
+    "decimal": "1",
+    "unit_position": "1",
+    "multiplier": "1",
+    "tolerance": "1"
+  },
+  {
+    "color": "rot",
+    "decimal": "2",
+    "unit_position": "2",
+    "multiplier": "2",
+    "tolerance": "2"
+  },
+  {
+    "color": "orange",
+    "decimal": "3",
+    "unit_position": "3",
+    "multiplier": "3",
+    "tolerance": "not_allowed"
+  },
+  {
+    "color": "gelb",
+    "decimal": "4",
+    "unit_position": "4",
+    "multiplier": "4",
+    "tolerance": "not_allowed"
+  },
+  {
+    "color": "grün",
+    "decimal": "5",
+    "unit_position": "5",
+    "multiplier": "5",
+    "tolerance": "0,5"
+  },
+  {
+    "color": "blau",
+    "decimal": "6",
+    "unit_position": "6",
+    "multiplier": "6",
+    "tolerance": "0,25"
+  },
+  {
+    "color": "violett",
+    "decimal": "7",
+    "unit_position": "7",
+    "multiplier": "7",
+    "tolerance": "0,1"
+  },
+  {
+    "color": "grau",
+    "decimal": "8",
+    "unit_position": "8",
+    "multiplier": "8",
+    "tolerance": "0,05"
+  },
+  {
+    "color": "weiß",
+    "decimal": "9",
+    "unit_position": "9",
+    "multiplier": "9",
+    "tolerance": "not_allowed"
+  }
+]

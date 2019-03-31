@@ -50,10 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="color_codes.xml" />
     <Content Include="Schemas\color_codes.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="color_codes.json" />
+    <None Include="Schemas\color_codes_schema.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Components.HowLargeIsTheResistance\Components.HowLargeIsTheResistance.csproj">
@@ -62,10 +65,5 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="color_codes.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

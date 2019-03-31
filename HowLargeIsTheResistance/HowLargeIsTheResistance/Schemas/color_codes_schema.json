@@ -1,0 +1,71 @@
+{
+  "$id": "http://HowLargeIsTheResistance.com/color_codes_schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {},
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "color",
+      "decimal",
+      "unit_position",
+      "multiplier",
+      "tolerance"
+    ],
+    "properties": {
+      "color": {
+        "$id": "#/items/properties/color",
+        "type": "string",
+        "title": "The Color Schema",
+        "default": "",
+        "examples": [
+          "keine"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "decimal": {
+        "$id": "#/items/properties/decimal",
+        "type": "string",
+        "title": "The Decimal Schema",
+        "default": "",
+        "examples": [
+          "not_allowed"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "unit_position": {
+        "$id": "#/items/properties/unit_position",
+        "type": "string",
+        "title": "The Unit_position Schema",
+        "default": "",
+        "examples": [
+          "not_allowed"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "multiplier": {
+        "$id": "#/items/properties/multiplier",
+        "type": "string",
+        "title": "The Multiplier Schema",
+        "default": "",
+        "examples": [
+          "not_allowed"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "tolerance": {
+        "$id": "#/items/properties/tolerance",
+        "type": "string",
+        "title": "The Tolerance Schema",
+        "default": "",
+        "examples": [
+          "20"
+        ],
+        "pattern": "^(.*)$"
+      }
+    }
+  },
+  "title": "The Root Schema",
+  "type": "array"
+}
