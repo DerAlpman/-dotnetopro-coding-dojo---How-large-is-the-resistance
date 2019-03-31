@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using Components.HowLargeIsTheResistance.Interfaces;
 using Components.HowLargeIsTheResistance.Models;
@@ -22,6 +21,13 @@ namespace HowLargeIsTheResistance.Providers
         #region FIELDS
 
         private readonly string _FileName;
+        private readonly IList<string> _ValidationErrorMessages = new List<string>();
+
+        #endregion
+
+        #region PROPERTIES
+
+        public IList<string> ValidationErrorMessages => _ValidationErrorMessages;
 
         #endregion
 
@@ -44,7 +50,7 @@ namespace HowLargeIsTheResistance.Providers
         {
             if (!File.Exists(_FileName))
             {
-                yield break;
+                throw new FileNotFoundException(_FileName);
             }
 
             if (TryGetJSONSchema(out JSchema schema))
@@ -72,8 +78,7 @@ namespace HowLargeIsTheResistance.Providers
             {
                 validatingReader.Schema = schema;
 
-                IList<string> messages = new List<string>();
-                validatingReader.ValidationEventHandler += (o, a) => throw new Exception(a.Message);
+                validatingReader.ValidationEventHandler += (o, a) => _ValidationErrorMessages.Add(a.Message);
 
                 JsonSerializer serializer = new JsonSerializer();
                 colorCodes = serializer.Deserialize<List<ColorCode_DIN_IEC_62>>(validatingReader);

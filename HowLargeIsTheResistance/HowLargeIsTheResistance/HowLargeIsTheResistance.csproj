@@ -67,6 +67,9 @@
     <Content Include="color_codes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="color_codes_invalid.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Schemas\color_codes_schema.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

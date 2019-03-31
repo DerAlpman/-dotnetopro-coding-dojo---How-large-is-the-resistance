@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Components.HowLargeIsTheResistance.Models;
 using HowLargeIsTheResistance.Providers;
@@ -10,11 +11,11 @@ namespace HowLargeIsTheResistanceTests
     public class ColorCode_DIN_IEC_62_FromJSONProviderTests
     {
         [TestMethod]
-        public void LoadColorCodes_ProviderGetsNotExistingFileName_EmptyListOfColorCodes()
+        public void LoadColorCodes_ProviderGetsNotExistingFileName_FileNotFoundException()
         {
             #region ARRANGE
 
-            ColorCode_DIN_IEC_62_FromXMLProvider provider = new ColorCode_DIN_IEC_62_FromXMLProvider("Schnulli.xml");
+            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider("Schnulli.xml");
 
             #endregion
 
@@ -26,7 +27,7 @@ namespace HowLargeIsTheResistanceTests
 
             #region ASSERT
 
-            Assert.IsTrue(!colorCodes.Any());
+            Assert.ThrowsException<FileNotFoundException>(() => provider.LoadColourCodes());
 
             #endregion
         }
@@ -49,6 +50,28 @@ namespace HowLargeIsTheResistanceTests
             #region ASSERT
 
             Assert.IsTrue(colorCodes.Any());
+
+            #endregion
+        }
+
+        [TestMethod]
+        public void LoadColorCodes_ProviderGetsFileWithJSONNotMatchingSchema_ListOfValidationErrorMessagesNotEmpty()
+        {
+            #region ARRANGE
+
+            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider("color_codes_invalid.json");
+
+            #endregion
+
+            #region ACT
+
+            IEnumerable<ColorCode_DIN_IEC_62> colorCodes = provider.LoadColourCodes();
+
+            #endregion
+
+            #region ASSERT
+
+            Assert.IsTrue(provider.ValidationErrorMessages.Any());
 
             #endregion
         }
