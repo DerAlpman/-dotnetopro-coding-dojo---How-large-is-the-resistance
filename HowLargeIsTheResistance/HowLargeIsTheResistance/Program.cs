@@ -23,9 +23,8 @@ namespace HowLargeIsTheResistance
                     return;
                 }
 
-                InputValidator.ValidateArguments(args);
+                InputValidator.ValidateArguments(args, colorCodes);
 
-                InputValidator.ValidateRingPositions(args, colorCodes);
             }
             catch (FileNotFoundException e)
             {

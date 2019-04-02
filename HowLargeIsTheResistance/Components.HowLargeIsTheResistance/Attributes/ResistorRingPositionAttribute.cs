@@ -2,7 +2,7 @@
 
 namespace Components.HowLargeIsTheResistance.Attributes
 {
-    internal sealed class ResistorRingPositionAttribute : Attribute
+    public sealed class ResistorRingPositionAttribute : Attribute
     {
         #region CONSTRUCTOR
 

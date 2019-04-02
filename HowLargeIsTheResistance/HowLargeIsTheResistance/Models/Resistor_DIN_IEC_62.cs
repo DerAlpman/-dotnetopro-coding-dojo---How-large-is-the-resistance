@@ -36,7 +36,6 @@ namespace HowLargeIsTheResistance.Models
 
         #endregion
 
-
         #region CONSTRUCTOR
 
         private Resistor_DIN_IEC_62(int baseResistorValue, int multiplier, double tolerance)

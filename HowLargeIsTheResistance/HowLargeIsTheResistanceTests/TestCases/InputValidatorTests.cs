@@ -16,6 +16,8 @@ namespace HowLargeIsTheResistanceTests.TestCases
         public void ValidateArguments_NotExactlyFourArguments_ArgumentOutOfRangeException(int nrArguments)
         {
             #region ARRANGE
+            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider(@"TestFiles\color_codes.json");
+            IEnumerable<ColorCode_DIN_IEC_62> colorCodes = provider.LoadColorCodes();
 
             string[] args = new string[nrArguments];
 
@@ -27,7 +29,7 @@ namespace HowLargeIsTheResistanceTests.TestCases
 
             #region ASSERT
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => InputValidator.ValidateArguments(args));
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => InputValidator.ValidateArguments(args, colorCodes));
 
             #endregion
         }
@@ -37,7 +39,6 @@ namespace HowLargeIsTheResistanceTests.TestCases
         public void ValidateArguments_RingColorsAtWrongPositionsArguments_ArgumentOutOfRangeException(string[] args)
         {
             #region ARRANGE
-
             ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider(@"TestFiles\color_codes.json");
             IEnumerable<ColorCode_DIN_IEC_62> colorCodes = provider.LoadColorCodes();
 
@@ -49,7 +50,7 @@ namespace HowLargeIsTheResistanceTests.TestCases
 
             #region ASSERT
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => InputValidator.ValidateRingPositions(args, colorCodes));
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => InputValidator.ValidateArguments(args, colorCodes));
 
             #endregion
         }
