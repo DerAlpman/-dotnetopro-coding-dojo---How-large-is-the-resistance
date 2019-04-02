@@ -1,5 +1,5 @@
 {
-  "$id": "http://HowLargeIsTheResistance.com/color_codes_schema.json",
+  "$id": "http://HowLargeIsTheResistance.com/Color_codes_schema.json",
   "$schema": "http://json-schema.org/draft-04/schema",
   "definitions": {},
   "items": {
@@ -7,15 +7,15 @@
     "type": "object",
     "title": "The Items Schema",
     "required": [
-      "color",
-      "decimal",
-      "unit_position",
-      "multiplier",
-      "tolerance"
+      "Color",
+      "DecimalValue",
+      "UnitValue",
+      "Multiplier",
+      "Tolerance"
     ],
     "properties": {
-      "color": {
-        "$id": "#/items/properties/color",
+      "Color": {
+        "$id": "#/items/properties/Color",
         "type": "string",
         "title": "The Color Schema",
         "default": "",
@@ -24,8 +24,8 @@
         ],
         "pattern": "^(.*)$"
       },
-      "decimal": {
-        "$id": "#/items/properties/decimal",
+      "DecimalValue": {
+        "$id": "#/items/properties/DecimalValue",
         "type": "string",
         "title": "The Decimal Schema",
         "default": "",
@@ -34,8 +34,8 @@
         ],
         "pattern": "^(.*)$"
       },
-      "unit_position": {
-        "$id": "#/items/properties/unit_position",
+      "UnitValue": {
+        "$id": "#/items/properties/UnitValue",
         "type": "string",
         "title": "The Unit_position Schema",
         "default": "",
@@ -44,8 +44,8 @@
         ],
         "pattern": "^(.*)$"
       },
-      "multiplier": {
-        "$id": "#/items/properties/multiplier",
+      "Multiplier": {
+        "$id": "#/items/properties/Multiplier",
         "type": "string",
         "title": "The Multiplier Schema",
         "default": "",
@@ -54,8 +54,8 @@
         ],
         "pattern": "^(.*)$"
       },
-      "tolerance": {
-        "$id": "#/items/properties/tolerance",
+      "Tolerance": {
+        "$id": "#/items/properties/Tolerance",
         "type": "string",
         "title": "The Tolerance Schema",
         "default": "",

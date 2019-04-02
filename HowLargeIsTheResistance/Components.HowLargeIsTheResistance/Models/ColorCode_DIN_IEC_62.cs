@@ -1,4 +1,6 @@
-﻿namespace Components.HowLargeIsTheResistance.Models
+﻿using Components.HowLargeIsTheResistance.Attributes;
+
+namespace Components.HowLargeIsTheResistance.Models
 {
     /// <summary>
     /// <para> A color code according to DIN IEC 62.</para>
@@ -9,12 +11,16 @@
 
         public string Color { get; set; }
 
-        public string Decimal { get; set; }
+        [ResistorRingPositionAttribute(1)]
+        public string DecimalValue { get; set; }
 
-        public string UnitPosition { get; set; }
+        [ResistorRingPositionAttribute(2)]
+        public string UnitValue { get; set; }
 
+        [ResistorRingPositionAttribute(3)]
         public string Multiplier { get; set; }
 
+        [ResistorRingPositionAttribute(4)]
         public string Tolerance { get; set; }
 
         #endregion

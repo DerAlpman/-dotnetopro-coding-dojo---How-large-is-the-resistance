@@ -52,6 +52,7 @@
     <Compile Include="TestCases\ColorCode_DIN_IEC_62_FromJSONProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\Resistor_DIN_IEC_62Tests.cs" />
+    <Compile Include="TestCases\InputValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

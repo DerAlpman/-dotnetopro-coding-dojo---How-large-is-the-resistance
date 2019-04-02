@@ -5,7 +5,7 @@ using Components.HowLargeIsTheResistance.Models;
 using HowLargeIsTheResistance.Providers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HowLargeIsTheResistanceTests
+namespace HowLargeIsTheResistanceTests.TestCases
 {
     [TestClass]
     public class ColorCode_DIN_IEC_62_FromJSONProviderTests
@@ -35,19 +35,19 @@ namespace HowLargeIsTheResistanceTests
         {
             #region ARRANGE
 
-            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider(@"TestFiles\color_codes.json");
+            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider(@"TestFiles\Color_codes.json");
 
             #endregion
 
             #region ACT
 
-            IEnumerable<ColorCode_DIN_IEC_62> colorCodes = provider.LoadColorCodes();
+            IEnumerable<ColorCode_DIN_IEC_62> ColorCodes = provider.LoadColorCodes();
 
             #endregion
 
             #region ASSERT
 
-            Assert.IsTrue(colorCodes.Any());
+            Assert.IsTrue(ColorCodes.Any());
 
             #endregion
         }
@@ -57,13 +57,13 @@ namespace HowLargeIsTheResistanceTests
         {
             #region ARRANGE
 
-            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider(@"TestFiles\color_codes_invalid.json");
+            ColorCode_DIN_IEC_62_FromJSONProvider provider = new ColorCode_DIN_IEC_62_FromJSONProvider(@"TestFiles\Color_codes_invalid.json");
 
             #endregion
 
             #region ACT
 
-            var colorCodes = provider.LoadColorCodes();
+            var ColorCodes = provider.LoadColorCodes();
 
             #endregion
 

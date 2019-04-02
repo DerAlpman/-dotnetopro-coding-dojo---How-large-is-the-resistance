@@ -1,93 +1,93 @@
 ﻿[
   {
-    "color": "keine",
-    "decimal": "not_allowed",
-    "unit_position": "not_allowed",
-    "multiplier": "not_allowed",
-    "tolerance": "20"
+    "Color": "keine",
+    "DecimalValue": "not_allowed",
+    "UnitValue": "not_allowed",
+    "Multiplier": "not_allowed",
+    "Tolerance": "20"
   },
   {
-    "color": "silver",
-    "decimal": "not_allowed",
-    "unit_position": "not_allowed",
-    "multiplier": "-2",
-    "tolerance": "10"
+    "Color": "silber",
+    "DecimalValue": "not_allowed",
+    "UnitValue": "not_allowed",
+    "Multiplier": "-2",
+    "Tolerance": "10"
   },
   {
-    "color": "gold",
-    "decimal": "not_allowed",
-    "unit_position": "not_allowed",
-    "multiplier": "-1",
-    "tolerance": "5"
+    "Color": "gold",
+    "DecimalValue": "not_allowed",
+    "UnitValue": "not_allowed",
+    "Multiplier": "-1",
+    "Tolerance": "5"
   },
   {
-    "color": "schwarz",
-    "decimal": "not_allowed",
-    "unit_position": "0",
-    "multiplier": "-0",
-    "tolerance": "not_allowed"
+    "Color": "schwarz",
+    "DecimalValue": "not_allowed",
+    "UnitValue": "0",
+    "Multiplier": "-0",
+    "Tolerance": "not_allowed"
   },
   {
-    "color": "braun",
-    "decimal": "1",
-    "unit_position": "1",
-    "multiplier": "1",
-    "tolerance": "1"
+    "Color": "braun",
+    "DecimalValue": "1",
+    "UnitValue": "1",
+    "Multiplier": "1",
+    "Tolerance": "1"
   },
   {
-    "color": "rot",
-    "decimal": "2",
-    "unit_position": "2",
-    "multiplier": "2",
-    "tolerance": "2"
+    "Color": "rot",
+    "DecimalValue": "2",
+    "UnitValue": "2",
+    "Multiplier": "2",
+    "Tolerance": "2"
   },
   {
-    "color": "orange",
-    "decimal": "3",
-    "unit_position": "3",
-    "multiplier": "3",
-    "tolerance": "not_allowed"
+    "Color": "orange",
+    "DecimalValue": "3",
+    "UnitValue": "3",
+    "Multiplier": "3",
+    "Tolerance": "not_allowed"
   },
   {
-    "color": "gelb",
-    "decimal": "4",
-    "unit_position": "4",
-    "multiplier": "4",
-    "tolerance": "not_allowed"
+    "Color": "gelb",
+    "DecimalValue": "4",
+    "UnitValue": "4",
+    "Multiplier": "4",
+    "Tolerance": "not_allowed"
   },
   {
-    "color": "grün",
-    "decimal": "5",
-    "unit_position": "5",
-    "multiplier": "5",
-    "tolerance": "0,5"
+    "Color": "grün",
+    "DecimalValue": "5",
+    "UnitValue": "5",
+    "Multiplier": "5",
+    "Tolerance": "0,5"
   },
   {
-    "color": "blau",
-    "decimal": "6",
-    "unit_position": "6",
-    "multiplier": "6",
-    "tolerance": "0,25"
+    "Color": "blau",
+    "DecimalValue": "6",
+    "UnitValue": "6",
+    "Multiplier": "6",
+    "Tolerance": "0,25"
   },
   {
-    "color": "violett",
-    "decimal": "7",
-    "unit_position": "7",
-    "multiplier": "7",
-    "tolerance": "0,1"
+    "Color": "violett",
+    "DecimalValue": "7",
+    "UnitValue": "7",
+    "Multiplier": "7",
+    "Tolerance": "0,1"
   },
   {
-    "color": "grau",
-    "decimal": "8",
-    "unit_position": "8",
-    "multiplier": "8",
-    "tolerance": "0,05"
+    "Color": "grau",
+    "DecimalValue": "8",
+    "UnitValue": "8",
+    "Multiplier": "8",
+    "Tolerance": "0,05"
   },
   {
-    "color": "weiß",
-    "decimal": "9",
-    "unit_position": "9",
-    "multiplier": "9",
-    "tolerance": "not_allowed"
+    "Color": "weiß",
+    "DecimalValue": "9",
+    "UnitValue": "9",
+    "Multiplier": "9",
+    "Tolerance": "not_allowed"
   }
 ]

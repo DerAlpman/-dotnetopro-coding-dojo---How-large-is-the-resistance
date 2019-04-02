@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ResistorRingPositionAttribute.cs" />
     <Compile Include="Interfaces\IColorCode_DIN_IEC_62_Provider.cs" />
     <Compile Include="Interfaces\IElectronicResistor.cs" />
     <Compile Include="Models\ColorCode_DIN_IEC_62.cs" />

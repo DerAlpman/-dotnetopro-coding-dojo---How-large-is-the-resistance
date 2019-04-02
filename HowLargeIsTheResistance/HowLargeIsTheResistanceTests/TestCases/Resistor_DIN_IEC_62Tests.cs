@@ -1,7 +1,7 @@
 ﻿using HowLargeIsTheResistance.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HowLargeIsTheResistanceTests
+namespace HowLargeIsTheResistanceTests.TestCases
 {
     [TestClass]
     public class Resistor_DIN_IEC_62Tests
