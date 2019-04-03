@@ -66,9 +66,15 @@ namespace HowLargeIsTheResistance.Models
 
         #region Resistor_DIN_IEC_62
 
+        /// <summary>
+        /// <para>Creates a Resistor_DIN_IEC_62.</para>
+        /// </summary>
+        /// <param name="ringColors"></param>
+        /// <param name="colorCodes"></param>
+        /// <returns></returns>
         internal static Resistor_DIN_IEC_62 Create(string[] ringColors, IReadOnlyList<ColorCode_DIN_IEC_62> colorCodes)
         {
-            ValidateCountColors(ringColors, colorCodes);
+            ValidateCountColors(ringColors);
 
             var ringColorCodes = GetColorCodesForRings(ringColors, colorCodes);
 
@@ -78,6 +84,67 @@ namespace HowLargeIsTheResistance.Models
                 Convert.ToDouble(ringColorCodes[3].Tolerance));
         }
 
+        /// <summary>
+        /// <para>Creates a Resistor_DIN_IEC_62.</para>
+        /// </summary>
+        /// <param name="baseResistorValue"></param>
+        /// <param name="multiplier"></param>
+        /// <param name="tolerance"></param>
+        /// <returns></returns>
+        internal static Resistor_DIN_IEC_62 Create(int baseResistorValue, int multiplier, double tolerance)
+        {
+            if (baseResistorValue < 10 || baseResistorValue > 99)
+            {
+                throw new ArgumentOutOfRangeException(string.Format("The base resistor value {0} must be between 10 and 99.", baseResistorValue));
+            }
+
+            if (multiplier < 1 || multiplier > 9)
+            {
+                throw new ArgumentOutOfRangeException(string.Format("The multiplier value {0} must be between 1 and 9.", multiplier));
+            }
+
+            if (!ALLOWED_TOLERANCES.Contains(tolerance))
+            {
+                throw new ArgumentOutOfRangeException(string.Format("The tolerance value {0} is not allowed.", tolerance));
+            }
+
+            return new Resistor_DIN_IEC_62(baseResistorValue, multiplier, tolerance);
+        }
+
+        /// <summary>
+        /// <para>Throws ArgumentOutOfRangeException if size of <paramref name="ringColors"/> != 4.</para>
+        /// </summary>
+        /// <param name="ringColors"></param>
+        /// <param name="colorCodes"></param>
+        private static void ValidateCountColors(string[] ringColors)
+        {
+            int ringColorsCount = ringColors.Count();
+            if (ringColorsCount != 4)
+            {
+                throw new ArgumentOutOfRangeException(nameof(ringColors), ringColorsCount, "Der Widerstand benötigt genau vier Farben.");
+            }
+        }
+
+        /// <summary>
+        /// <para>Tries to get ColorCode_DIN_IEC_62 for <paramref name="color"/>.</para>
+        /// </summary>
+        /// <param name="color"></param>
+        /// <param name="colorCodes"></param>
+        /// <param name="colorCode"></param>
+        /// <returns>true if a ColorCode_DIN_IEC_62 is found, else false.</returns>
+        private static bool TryGetColorCode(string color, IEnumerable<ColorCode_DIN_IEC_62> colorCodes, out ColorCode_DIN_IEC_62 colorCode)
+        {
+            colorCode = colorCodes.FirstOrDefault(cc => cc.Color.Equals(color));
+
+            return colorCode != null;
+        }
+
+        /// <summary>
+        /// <para>Transforms <paramref name="ringColors"/> into an array of ColorCode_DIN_IEC_62.</para>
+        /// </summary>
+        /// <param name="ringColors"></param>
+        /// <param name="colorCodes"></param>
+        /// <returns></returns>
         private static ColorCode_DIN_IEC_62[] GetColorCodesForRings(string[] ringColors, IReadOnlyList<ColorCode_DIN_IEC_62> colorCodes)
         {
             ColorCode_DIN_IEC_62[] colorCodesForRings = new ColorCode_DIN_IEC_62[ringColors.Count()];
@@ -109,47 +176,6 @@ namespace HowLargeIsTheResistance.Models
             }
 
             return colorCodesForRings;
-        }
-
-        internal static Resistor_DIN_IEC_62 Create(int baseResistorValue, int multiplier, double tolerance)
-        {
-            if (baseResistorValue < 10 || baseResistorValue > 99)
-            {
-                throw new ArgumentOutOfRangeException(string.Format("The base resistor value {0} must be between 10 and 99.", baseResistorValue));
-            }
-
-            if (multiplier < 1 || multiplier > 9)
-            {
-                throw new ArgumentOutOfRangeException(string.Format("The multiplier value {0} must be between 1 and 9.", multiplier));
-            }
-
-            if (!ALLOWED_TOLERANCES.Contains(tolerance))
-            {
-                throw new ArgumentOutOfRangeException(string.Format("The tolerance value {0} is not allowed.", tolerance));
-            }
-
-            return new Resistor_DIN_IEC_62(baseResistorValue, multiplier, tolerance);
-        }
-
-        /// <summary>
-        /// <para></para>
-        /// </summary>
-        /// <param name="ringColors"></param>
-        /// <param name="colorCodes"></param>
-        private static void ValidateCountColors(string[] ringColors, IEnumerable<ColorCode_DIN_IEC_62> colorCodes)
-        {
-            int ringColorsCount = ringColors.Count();
-            if (ringColorsCount != 4)
-            {
-                throw new ArgumentOutOfRangeException(nameof(ringColors), ringColorsCount, "Der Widerstand benötigt genau vier Farben.");
-            }
-        }
-
-        private static bool TryGetColorCode(string color, IEnumerable<ColorCode_DIN_IEC_62> colorCodes, out ColorCode_DIN_IEC_62 colorCode)
-        {
-            colorCode = colorCodes.FirstOrDefault(cc => cc.Color.Equals(color));
-
-            return colorCode != null;
         }
 
         #endregion
