@@ -1,4 +1,7 @@
-﻿using HowLargeIsTheResistance.Models;
+﻿using System.Collections.Generic;
+using Components.HowLargeIsTheResistance.Models;
+using HowLargeIsTheResistance.Models;
+using HowLargeIsTheResistance.Providers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace HowLargeIsTheResistanceTests.TestCases
@@ -7,7 +10,8 @@ namespace HowLargeIsTheResistanceTests.TestCases
     public class Resistor_DIN_IEC_62Tests
     {
         [TestMethod]
-        public void TryCreate_AllowedValues_NewResistor()
+        [DataRow(13, 2, 0.1)]
+        public void Create_AllowedValues_NewResistor(int baseValue, int multiplier, double tolerance)
         {
             #region ARRANGE
 
@@ -15,7 +19,31 @@ namespace HowLargeIsTheResistanceTests.TestCases
 
             #region ACT
 
-            var resistor = Resistor_DIN_IEC_62.Create(13, 2, 0.1);
+            var resistor = Resistor_DIN_IEC_62.Create(baseValue, multiplier, tolerance);
+
+            #endregion
+
+            #region ASSERT
+
+            Assert.IsTrue(resistor != null);
+
+            #endregion
+        }
+
+        [TestMethod]
+        [DataRow(new string[] { "braun", "rot", "orange", "grün" })]
+        public void Create_ColorStringArray_NewResistor(string[] ringColors)
+        {
+            #region ARRANGE
+
+            ColorCode_DIN_IEC_62_FromJSONProvider colorCodesProvider = new ColorCode_DIN_IEC_62_FromJSONProvider("color_codes.json");
+            IReadOnlyList<ColorCode_DIN_IEC_62> colorCodes = colorCodesProvider.LoadColorCodes();
+
+            #endregion
+
+            #region ACT
+
+            var resistor = Resistor_DIN_IEC_62.Create(ringColors, colorCodes);
 
             #endregion
 

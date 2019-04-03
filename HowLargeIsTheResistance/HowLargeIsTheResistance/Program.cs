@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Components.HowLargeIsTheResistance.Models;
+using HowLargeIsTheResistance.Models;
 using HowLargeIsTheResistance.Providers;
-using HowLargeIsTheResistance.Validators;
 
 namespace HowLargeIsTheResistance
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] ringColors)
         {
             try
             {
@@ -23,8 +23,9 @@ namespace HowLargeIsTheResistance
                     return;
                 }
 
-                InputValidator.ValidateArguments(args, colorCodes);
+                Resistor_DIN_IEC_62 resistor = Resistor_DIN_IEC_62.Create(ringColors, colorCodes);
 
+                Console.WriteLine(resistor.ResistorValue());
             }
             catch (FileNotFoundException e)
             {

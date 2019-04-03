@@ -54,7 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfoEx.cs" />
     <Compile Include="Providers\ColorCode_DIN_IEC_62_FromJSONProvider.cs" />
-    <Compile Include="Validators\InputValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
